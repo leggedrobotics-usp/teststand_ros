@@ -28,11 +28,10 @@
 - [Feature requests](#feature_requests)
 - [Contributing](#contributing)
 - [Author](#author)
-- [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-This package contains the ROS2 description (URDF/xacro files) of the Open Dynamic Robot Initiative Leg Test Stand. It is based on the [robot_properties_teststand](https://github.com/open-dynamic-robot-initiative/robot_properties_teststand) repository.
+This package contains the ROS2 description (URDF/xacro files) of the [Open Dynamic Robot Initiative](https://open-dynamic-robot-initiative.github.io/) Leg Test Stand. It is based on the [robot_properties_teststand](https://github.com/open-dynamic-robot-initiative/robot_properties_teststand) repository.
 
 The package also has 2 launch files:
 
@@ -100,15 +99,6 @@ Want something more on the robot description? Open an *Enhancement* issue descri
  <sub><b>Victor T. N. 🤖</b></sub></a>
 
 Made with ❤️ by [@Vtn21](https://github.com/Vtn21)
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-<a href="https://github.com/evergamini">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/142813395?v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Elisa G. Vergamini</b></sub></a>
-
- Designer of IC2D
 
 <!-- [![Gmail Badge](https://img.shields.io/badge/-victor.noppeney@usp.br-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:victor.noppeney@usp.br)](mailto:victor.noppeney@usp.br) -->
 

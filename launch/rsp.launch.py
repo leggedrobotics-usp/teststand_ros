@@ -28,15 +28,11 @@ def generate_launch_description():
         parameters=[params]
     )
 
-    # Foxglobe bridge (for visualization purposes)
-    foxglove_bridge = Node(package='foxglove_bridge', executable='foxglove_bridge')
-
     # Launch!
     return LaunchDescription([
         DeclareLaunchArgument(
             'use_sim_time',
             default_value='false',
             description='Use sim time if true'),
-        node_robot_state_publisher,
-        foxglove_bridge
+        node_robot_state_publisher
     ])

@@ -32,15 +32,11 @@ def generate_launch_description():
     else:
         model_path = pkg_install_path
 
-    print(model_path)
-        
-    gazebo_params_file = os.path.join(get_package_share_directory(package_name), 'config', 'gazebo_params.yaml')
-
     # Include the Gazebo launch file, provided by the gazebo_ros package
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')]),
-                    launch_arguments=[('gz_args', [' -r -v 3 empty.sdf'])]
+                    launch_arguments=[('gz_args', ['-r -v 3 empty.sdf -s'])]
              )
 
     # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have a single robot.
@@ -71,6 +67,10 @@ def generate_launch_description():
         ros_arguments=["-p", "topic_name:=/position_controller/commands"]
     )
 
+    # Gazebo Real Time Factor (RTF) publisher
+    rtf_publisher = Node(package="gz_rtf_publisher",
+                         executable="gz_rtf_publisher")
+
     # Launch them all!
     return LaunchDescription([
         SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH', model_path),
@@ -79,5 +79,6 @@ def generate_launch_description():
         spawn_entity,
         pos_cont_spawner,
         joint_broad_spawner,
-        ref_signal_generator
+        ref_signal_generator,
+        rtf_publisher
     ])

@@ -1,0 +1,19 @@
+<launch>
+
+    <!-- Controller parameters file -->
+    <rosparam file="$(find teststand_control)/config/position_controller.yaml" command="load" ns="/"/>
+
+    <!-- Position controller spawner -->
+    <node name="position_controller_spawner" pkg="controller_manager" type="spawner" output="screen"
+          args="position_controller"/>
+
+    <!-- Joint state broadcaster spawner -->
+    <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" output="screen"
+          args="joint_state_controller"/>
+
+    <!-- Reference signal generator -->
+    <node name="reference_signal_generator" pkg="reference_signal_generator" type="reference_signal_generator.py" output="screen">
+        <param name="topic_name" value="/position_controller/command"/>
+    </node>
+
+</launch>

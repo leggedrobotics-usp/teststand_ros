@@ -1,0 +1,23 @@
+<launch>
+
+    <!-- Declare Launch Arguments -->
+    <arg name="gui" default="false" />
+
+    <!-- Include the robot_state_publisher launch file with sim time enabled -->
+    <include file="$(find teststand_description)/launch/load.launch">
+        <arg name="use_sim_time" value="true"/>
+    </include>
+
+    <!-- Include the Gazebo launch file -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="world_name" value="$(find gazebo_ros)/worlds/empty.world"/>
+        <arg name="gui" value="$(arg gui)"/>
+    </include>
+
+    <!-- Spawn the robot in Gazebo -->
+    <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model teststand"/>
+
+</launch>

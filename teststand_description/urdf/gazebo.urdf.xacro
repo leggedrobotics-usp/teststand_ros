@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <gazebo>
+        <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+            <robotNamespace>/</robotNamespace>
+            <robotParam>robot_description</robotParam>
+            <robotParamNode>robot_state_publisher</robotParamNode>
+            <legacyModeNS>true</legacyModeNS>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+            <parameters>$(find teststand_description)/config/controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+    
+    <ros_control>
+        <joint name="joint_z">
+            <limit lower="0" upper="10"/>
+        </joint>
+        <joint name="HFE">
+            <limit lower="-1.57" upper="1.57"/>
+        </joint>
+        <joint name="KFE">
+            <limit lower="-3.14" upper="3.14"/>
+        </joint>
+    </ros_control>
+
+</robot>

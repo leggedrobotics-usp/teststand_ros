@@ -1,0 +1,9 @@
+<launch>
+
+    <!-- Include the robot_state_publisher launch file  -->
+    <include file="$(find teststand_description)/launch/description.launch"/>
+
+    <!-- Load joint_state_publisher_gui to fake joint motion -->
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui"/>
+    
+</launch>

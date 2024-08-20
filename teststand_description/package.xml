@@ -3,8 +3,8 @@
 <package format="3">
   <name>teststand_description</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="victortn21@hotmail.com">vscode</maintainer>
+  <description>The teststand_description package</description>
+  <maintainer email="victor.noppeney@alumni.usp.br">Vtn21</maintainer>
   <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

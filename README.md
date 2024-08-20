@@ -3,15 +3,15 @@
  <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
 </p> -->
 
-<h1 align="center">teststand_description</h1>
+<h1 align="center">teststand</h1>
 
 <div align="center">
 
-  [![GitHub issues](https://img.shields.io/github/issues/leggedrobotics-usp/teststand_description)](https://github.com/leggedrobotics-usp/teststand_description/issues)
-  ![GitHub pull requests](https://img.shields.io/github/issues-pr/leggedrobotics-usp/teststand_description)
-  [![GitHub forks](https://img.shields.io/github/forks/leggedrobotics-usp/teststand_description)](https://github.com/leggedrobotics-usp/teststand_description/network)
-  [![GitHub stars](https://img.shields.io/github/stars/leggedrobotics-usp/teststand_description)](https://github.com/leggedrobotics-usp/teststand_description/stargazers)
-  [![GitHub license](https://img.shields.io/github/license/leggedrobotics-usp/teststand_description)](https://github.com/leggedrobotics-usp/teststand_description/blob/main/LICENSE)
+  [![GitHub issues](https://img.shields.io/github/issues/leggedrobotics-usp/teststand)](https://github.com/leggedrobotics-usp/teststand/issues)
+  ![GitHub pull requests](https://img.shields.io/github/issues-pr/leggedrobotics-usp/teststand)
+  [![GitHub forks](https://img.shields.io/github/forks/leggedrobotics-usp/teststand)](https://github.com/leggedrobotics-usp/teststand/network)
+  [![GitHub stars](https://img.shields.io/github/stars/leggedrobotics-usp/teststand)](https://github.com/leggedrobotics-usp/teststand/stargazers)
+  [![GitHub license](https://img.shields.io/github/license/leggedrobotics-usp/teststand)](https://github.com/leggedrobotics-usp/teststand/blob/main/LICENSE)
 
 </div>
 
@@ -53,7 +53,7 @@ As mentioned above, this repo is a standard ROS2 package. Thus, you simply have 
 
 ```bash
 cd <path_to_your_ros2_ws>/src
-git clone https://github.com/leggedrobotics-usp/teststand_description.git
+git clone https://github.com/leggedrobotics-usp/teststand.git
 ```
 
 Then, use **colcon** to build.
@@ -74,7 +74,7 @@ Want something more on the robot description? Open an *Enhancement* issue descri
 ## 🤝 Contributing <a name="contributing"></a>
 
 - Fork the repo
-  - <https://github.com/leggedrobotics-usp/teststand_description/fork>
+  - <https://github.com/leggedrobotics-usp/teststand/fork>
 - Check out a new branch based and name it to what you intend to do:
   - ````bash
     git checkout -b BRANCH_NAME

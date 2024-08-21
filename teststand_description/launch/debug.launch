@@ -1,9 +1,16 @@
 <launch>
 
+    <!-- Declare Launch Arguments -->
+    <arg name="use_rviz" default="false" />
+
     <!-- Include the robot_state_publisher launch file  -->
     <include file="$(find teststand_description)/launch/load.launch"/>
 
     <!-- Load joint_state_publisher_gui to fake joint motion -->
     <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui"/>
-    
+
+    <!-- RViz -->
+    <arg name="rvizconfig" default="$(find teststand_description)/rviz/debug.rviz" />
+    <node if="$(arg use_rviz)" name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />
+
 </launch>

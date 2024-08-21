@@ -24,7 +24,7 @@
 
   <link name="base_link">
     <inertial>
-        <origin rpy="0 0 0" xyz="0 0 ${base_h/2.}"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
         <mass value="${base_m}"/>
         <inertia ixx="${1./12. * base_m * (base_h*base_h + base_w*base_w)}"
                  iyy="${1./12. * base_m * (base_h*base_h + base_l*base_l)}"
@@ -33,7 +33,7 @@
         />
     </inertial>
     <visual>
-        <origin rpy="0 0 0" xyz="0 0 ${base_h/2.}"/>
+        <origin rpy="0 0 0" xyz="0 ${-base_w/2.} ${base_h/3.}"/>
         <geometry>
           <mesh filename="package://teststand_description/meshes/cube.obj" scale="${base_l} ${base_w} ${base_h}"/>
         </geometry>
@@ -42,7 +42,7 @@
         </material>
     </visual>
     <collision>
-        <origin rpy="0 0 0" xyz="0 0 ${base_h/2.}"/>
+        <origin rpy="0 0 0" xyz="0 ${-base_w/2.} ${base_h/3.}"/>
         <geometry>
             <box size="${base_l} ${base_w} ${base_h}"/>
         </geometry>

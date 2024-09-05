@@ -4,18 +4,17 @@ from ament_index_python.packages import get_package_share_directory
 from ament_index_python.packages import get_package_prefix
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
-from launch.actions import SetEnvironmentVariable
+from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled.
+    # Load the robot description, with "simulation" argument set to true (loads Gazebo hardware interface)
     load_description = IncludeLaunchDescription(PythonLaunchDescriptionSource([os.path.join(
         get_package_share_directory('teststand_description'),'launch','load.launch.py')]),
-        launch_arguments={'use_sim_time': 'true'}.items())
+        launch_arguments={'simulation': 'true'}.items())
 
     # Set the GAZEBO_MODEL_PATH environment variable to include the models from our own package.
     pkg_install_path = os.path.join(get_package_prefix('teststand_description'), "share")

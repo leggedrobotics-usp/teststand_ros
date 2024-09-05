@@ -77,7 +77,7 @@
       </contact>
     </link> <!-- END UPPER LEG LINK -->
 
-    <!-- KFE: Joint between the upper leg and the lower leg -->
+    <!-- KFE Joint between the upper leg and the lower leg -->
     <joint name="${prefix}KFE" type="revolute">
       <parent link="${prefix}upperleg"/>
       <child link="${prefix}shank"/>
@@ -129,7 +129,7 @@
       </contact>
     </link> <!-- END LOWER LEG LINK -->
 
-    <!-- KFE: Joint between the upper leg and the lower leg -->
+    <!-- KFE Joint between the upper leg and the lower leg -->
     <joint name="${prefix}END" type="fixed">
       <parent link="${prefix}shank"/>
       <child link="${prefix}contact"/>

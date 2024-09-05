@@ -3,15 +3,15 @@
  <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
 </p> -->
 
-<h1 align="center">teststand</h1>
+<h1 align="center">teststand_ros</h1>
 
 <div align="center">
 
-  [![GitHub issues](https://img.shields.io/github/issues/leggedrobotics-usp/teststand)](https://github.com/leggedrobotics-usp/teststand/issues)
-  ![GitHub pull requests](https://img.shields.io/github/issues-pr/leggedrobotics-usp/teststand)
-  [![GitHub forks](https://img.shields.io/github/forks/leggedrobotics-usp/teststand)](https://github.com/leggedrobotics-usp/teststand/network)
-  [![GitHub stars](https://img.shields.io/github/stars/leggedrobotics-usp/teststand)](https://github.com/leggedrobotics-usp/teststand/stargazers)
-  [![GitHub license](https://img.shields.io/github/license/leggedrobotics-usp/teststand)](https://github.com/leggedrobotics-usp/teststand/blob/main/LICENSE)
+  [![GitHub issues](https://img.shields.io/github/issues/leggedrobotics-usp/teststand_ros)](https://github.com/leggedrobotics-usp/teststand_ros/issues)
+  ![GitHub pull requests](https://img.shields.io/github/issues-pr/leggedrobotics-usp/teststand_ros)
+  [![GitHub forks](https://img.shields.io/github/forks/leggedrobotics-usp/teststand_ros)](https://github.com/leggedrobotics-usp/teststand_ros/network)
+  [![GitHub stars](https://img.shields.io/github/stars/leggedrobotics-usp/teststand_ros)](https://github.com/leggedrobotics-usp/teststand_ros/stargazers)
+  [![GitHub license](https://img.shields.io/github/license/leggedrobotics-usp/teststand_ros)](https://github.com/leggedrobotics-usp/teststand_ros/blob/main/LICENSE)
 
 </div>
 
@@ -37,7 +37,7 @@ ROS1 | [ros1](https://github.com/leggedrobotics-usp/teststand/tree/ros1)
 
 ## 🧐 About <a name = "about"></a>
 
-This repository contains ROS2 packages for the [Open Dynamic Robot Initiative](https://open-dynamic-robot-initiative.github.io/) Leg Test Stand v2. It is based on the [robot_properties_teststand](https://github.com/open-dynamic-robot-initiative/robot_properties_teststand) repository.
+This repository contains ROS2 packages for the [Open Dynamic Robot Initiative](https://open-dynamic-robot-initiative.github.io/) Leg Test Stand v2. It is based on [robot_properties_teststand](https://github.com/open-dynamic-robot-initiative/robot_properties_teststand) and [odri_dual_motor_testbed_robot](https://github.com/stack-of-tasks/odri_dual_motor_testbed_robot).
 
 It is currently composed of the follwing packages:
 
@@ -47,13 +47,23 @@ It is currently composed of the follwing packages:
 
 - **teststand_gazebo**: integration with Gazebo (modern/Ignition).
 
+- **teststand_hw**: hardware integration based on [ros2_hardware_interface_odri](https://github.com/stack-of-tasks/ros2_hardware_interface_odri)
+
 ## 🏁 Getting Started <a name = "getting_started"></a>
 This repo is composed by a collection of ROS2 packages.
 
 ### 🛠 Prerequisites
 
 - A ROS2 workspace (colcon)
-    - See [this tutorial](https://docs.ros.org/en/rolling/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html) to learn how to create your own workspace.
+  - See [this tutorial](https://docs.ros.org/en/rolling/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html) to learn how to create your own workspace.
+- **IMPORTANT:** elevated privileges
+  - If you plan on using the real hardware (ODRI Master Board), it communicates with the host computer using network interfaces (Ethernet or WiFi), which in turn requires elevated privileges.
+  - Running only the hardware interface nodes using **sudo** will cause another problem: the ROS2 network will not work properly due to DDS user isolation.
+  - Thus, the easiest and recommended workaround is to run the packages as **root**. Development is made using Docker, which enables this configuration using the Dockerfile command below:
+
+```dockerfile
+USER root
+```
 
 ### 💻 Installing
 
@@ -73,7 +83,7 @@ colcon build --symlink-install
 
 ## 🎈 Usage <a name="usage"></a>
 
-Most packages have launch files encompassing most features. Check individual README files when available for more detailed information.
+Most packages have launch files encompassing their features. Check individual README files when available for more detailed information.
 
 ## 🔋 Feature requests <a name="feature_requests"></a>
 
@@ -82,7 +92,7 @@ Want something more for the ODRI Leg Test Stand? Open an *Enhancement* issue des
 ## 🤝 Contributing <a name="contributing"></a>
 
 - Fork the repo
-  - <https://github.com/leggedrobotics-usp/teststand/fork>
+  - <https://github.com/leggedrobotics-usp/teststand_ros/fork>
 - Check out a new branch based and name it to what you intend to do:
   - ````bash
     git checkout -b BRANCH_NAME

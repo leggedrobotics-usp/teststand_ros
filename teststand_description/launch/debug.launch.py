@@ -9,10 +9,11 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled.
+    # Load the robot description
     load_description = IncludeLaunchDescription(PythonLaunchDescriptionSource([os.path.join(
         get_package_share_directory('teststand_description'),'launch','load.launch.py')]))
     
+    # Add the joint state publisher GUI for simple testing
     jsp_gui = Node(package='joint_state_publisher_gui',
                    executable='joint_state_publisher_gui')
 
